@@ -1,5 +1,7 @@
 # Let's encourage ad blocking
 
+[![Bill Hicks on advertising](https://img.youtube.com/vi/aMN8REGJXaA/0.jpg)](https://www.youtube.com/watch?v=aMN8REGJXaA)
+
 If you use an ad blocker, you've probably come across sites which ask you to switch it off. Doing so exposes you to not only ads, but often malware too&mdash;as many Forbes readers [discovered](https://www.schneier.com/blog/archives/2016/02/the_ads_vs_ad_b.html) when they switched off their ad blockers to please the site.
 
 While there are clearly many benefits to ad blocking, many ad-dependent sites are now so desperate for ad money that they detect use of ad blockers by checking to see if their ads have loaded in the user's browser. If they haven't, the user often gets a stern telling off.
