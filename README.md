@@ -6,7 +6,7 @@ While there are clearly many benefits to ad blocking, many ad-dependent sites ar
 
 In [Why It's Okay to Block Ads](http://blog.practicalethics.ox.ac.uk/2015/10/why-its-ok-to-block-ads/), James Williams writes that in much of the debate around ad-blocking, there's a surprising assumption, from both sides, that "the large-scale capture and exploitation of human attention [is] ethical and/or inevitable in the first place".  He continues
 
-<blockquote>...the question should not be whether ad blocking is ethical, but whether it is a moral obligation. The burden of proof falls squarely on advertising to justify its intrusions into users’ attentional spaces---not on users to justify exercising their freedom of attention.</blockquote>
+<blockquote>...the question should not be whether ad blocking is ethical, but whether it is a moral obligation. The burden of proof falls squarely on advertising to justify its intrusions into users’ attentional spaces&mdash;not on users to justify exercising their freedom of attention.</blockquote>
 
 ### Detecting absence of ad blocker
 
@@ -14,9 +14,9 @@ How do we detect if someone is not running an ad blocker? We make a request for 
 
 ### Test site for ad blocking
 
-We've also set up a site---[blockads.fivefilters.org](https://blockads.fivefilters.org)---anyone can visit to see if their browser is blocking ads or not. It not only tests for ad blocking, but also checks to see if the browser is letting through 'acceptable' ads---if it is, you get warned about it. Many users of Adblock Plus are unaware that the company [makes money from whitelisting advertisers](http://www.engadget.com/2016/02/12/rip-adblock-plus/).
+We've also set up a site&mdash;[blockads.fivefilters.org](https://blockads.fivefilters.org)&mdash;anyone can visit to see if their browser is blocking ads or not. It not only tests for ad blocking, but also checks to see if the browser is letting through 'acceptable' ads&mdash;if it is, you get warned about it. Many users of Adblock Plus are unaware that the company [makes money from whitelisting advertisers](http://www.engadget.com/2016/02/12/rip-adblock-plus/).
 
-### Why do we recommend uBlock Origin?
+### Why do we recommend [uBlock Origin](https://github.com/gorhill/uBlock)?
 
 Because of its uncompromising stance towards ['acceptable' ads](https://github.com/gorhill/uBlock/blob/master/MANIFESTO.md):
 
