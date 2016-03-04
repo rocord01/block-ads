@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Check if you are running an ad blocker. We recommend uBlock Origin">
+    <meta name="author" content="fivefilters.org">
+    <!--<link rel="icon" href="favicon.ico">-->
+
+    <title>Block Ads!</title>
+
+    <style>
+    #get-blocker { 
+      display: none; /* ads.css - if let through - will display it */
+    }
+    #get-blocker-acceptable {
+      display: none; /* if we succeed in loading an image from an 'acceptable' ad company, we'll display a warning */
+    }
+    #get-blocker p.main-warning {
+      font-size: 40px;
+      color: red;
+    }
+    #all-good {
+      font-size: 40px;
+      color: lightgreen;
+    }
+    </style>
+
+    <link rel="stylesheet" href="css/ads.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/cover.css">
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><a href="index.html">Block Ads!</a></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="index.html">Test for ad blocker</a></li>
+                  <!-- <li><a href="#">Promote ad blocking</a></li> -->
+                  <li><a href="#">Why?</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <!--<h1 class="cover-heading">Are ads blocked?</h1>-->
+            <p class="lead" id="all-good"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
+            <div id="get-blocker">
+              <p class="lead main-warning"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> No ad blocking detected</p>
+              <p class="lead">We suggest you install an ad blocker</p>
+              <p class="lead">
+                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success">Get uBlock Origin</a>
+              </p>
+            </div>
+            <img id="acceptable-placeholder" style="visibility: hidden;" />
+            <div id="get-blocker-acceptable">
+              <p class="lead"><a class="text-danger" href="https://github.com/gorhill/uBlock/blob/master/MANIFESTO.md"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> But not for 'acceptable' ads!</a></p>
+              <p class="lead">
+                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success">Get uBlock Origin</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Made by <a href="http://fivefilters.org">FiveFilters.org</a> &bullet; <a href="https://github.com/fivefilters/block-ads">Fork, copy, improve</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        if ($("#all-good").is(":visible")) {
+         var img = $("img#acceptable-placeholder")
+        .load(function() {
+          $("#get-blocker-acceptable").show();
+        })
+        .attr('src', 'https://gstatic.com/ui/v1/icons/mail/images/cleardot.gif?ads=1'); // ?ads= is usually blocked, but gstatic.com is whitelisted by ABP's 'acceptable' ads program
+        }
+    </script>
+  </body>
+</html>
