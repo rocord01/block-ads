@@ -8,7 +8,7 @@ In [Why It's Okay to Block Ads](http://blog.practicalethics.ox.ac.uk/2015/10/why
 
 <blockquote>...the question should not be whether ad blocking is ethical, but whether it is a moral obligation. The burden of proof falls squarely on advertising to justify its intrusions into users’ attentional spaces&mdash;not on users to justify exercising their freedom of attention.</blockquote>
 
-The purpose of this little project is to encourage the use of ad blockers. For the time being it's a simple test to see if the user has an ad blocker installed, and a recommendation to install one if they don't. It'd also be nice to let website owners add a little banner/ribbon to their site which lets their visitors know if they're not using an ad blocker (we're running one on FiveFilters.org at the moment).
+The purpose of this little project is to encourage the use of ad blockers. For the time being it's a simple test to see if the user has an ad blocker installed, and a recommendation to install one if they don't. It'd also be nice to let website owners add a small banner/ribbon to their site which lets their visitors know if they're not using an ad blocker (we're running one on FiveFilters.org at the moment).
 
 ### Detecting absence of ad blocker
 
