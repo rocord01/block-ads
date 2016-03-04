@@ -29,3 +29,5 @@ Technically, it also [performs better](https://github.com/gorhill/uBlock#perform
 ### Feedback!
 
 This is an experimental project from [FiveFilters.org](http://fivefilters.org). Let us know what you think. Feel free to copy, improve, share your changes.
+
+This entry is an edited version of our [blog post](http://blog.fivefilters.org/post/140421322122/lets-encourage-ad-blocking).
