@@ -9,6 +9,8 @@
     <meta name="author" content="fivefilters.org">
     <!--<link rel="icon" href="favicon.ico">-->
 
+    <meta property="og:image" content="ff-logo.png" />
+
     <title>Block Ads!</title>
 
     <style>
@@ -31,10 +33,7 @@
     <link rel="stylesheet" href="css/ads.css">
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="css/cover.css">
@@ -56,7 +55,7 @@
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="index.html">Test for ad blocker</a></li>
                   <!-- <li><a href="#">Promote ad blocking</a></li> -->
-                  <li><a href="https://github.com/fivefilters/block-ads#readme">Why?</a></li>
+                  <li><a href="https://github.com/fivefilters/block-ads/blob/master/README.md">Why?</a></li>
                 </ul>
               </nav>
             </div>
@@ -66,7 +65,7 @@
             <!--<h1 class="cover-heading">Are ads blocked?</h1>-->
             <p class="lead" id="all-good"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
             <div id="get-blocker">
-              <p class="lead main-warning"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> No ad blocking detected</p>
+              <p class="lead main-warning">No ad blocking detected</p>
               <p class="lead">We suggest you install an ad blocker</p>
               <p class="lead">
                 <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success">Get uBlock Origin</a>
@@ -96,7 +95,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script>
         if ($("#all-good").is(":visible")) {
          var img = $("img#acceptable-placeholder")
