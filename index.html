@@ -14,23 +14,24 @@
     <title>Block Ads!</title>
 
     <style>
-    #get-blocker { 
-      display: none; /* ads.css - if let through - will display it */
+    #no-blocking, #partial-blocking, #all-good { 
+      display: none;
     }
-    #get-blocker-acceptable {
-      display: none; /* if we succeed in loading an image from an 'acceptable' ad company, we'll display a warning */
+    #partial-blocking p.main-warning {
+			font-size: 40px;
+			color: orange;
     }
-    #get-blocker p.main-warning {
+    #no-blocking p.main-warning {
       font-size: 40px;
       color: red;
     }
     #all-good {
-      font-size: 40px;
       color: lightgreen;
     }
+		#all-good p { font-size: 40px; }
     </style>
 
-    <link rel="stylesheet" href="css/ads.css">
+    <!-- <link rel="stylesheet" href="css/ads.css"> -->
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -62,23 +63,35 @@
           </div>
 
           <div class="inner cover">
-            <!--<h1 class="cover-heading">Are ads blocked?</h1>-->
-            <p class="lead" id="all-good"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
-            <div id="get-blocker">
+						<!-- Loading image -->
+            <p class="lead" id="testing" style="display: none;"><img src="images/testing.gif" /></p>
+            <!-- Ad blocking tests (requests for these images should be blocked by your ad blocker) -->
+            <img id="test-ad" src="https://www.doubleclickbygoogle.com/static/core/img/favicons/apple-touch-icon-57x57.png" style="visibility: hidden;" />
+            <img id="test-whitelist" src="https://gstatic.com/ui/v1/icons/mail/images/cleardot.gif?ads=1" style="visibility: hidden;" />
+            
+            <!-- Evertying okay? -->
+            <div id="all-good">
+							<p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
+						</div>
+						
+					
+						<!-- No ad blocking -->
+            <div id="no-blocking">
               <p class="lead main-warning">No ad blocking detected</p>
               <p class="lead">We suggest you install an ad blocker</p>
               <p class="lead">
                 <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success">Get uBlock Origin</a>
               </p>
             </div>
-            <img id="acceptable-placeholder" style="visibility: hidden;" />
-            <div id="get-blocker-acceptable">
-              <p class="lead"><a class="text-danger" href="https://github.com/gorhill/uBlock/blob/master/MANIFESTO.md"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> But not for 'acceptable' ads!</a></p>
+            
+						<!-- Partial blocking -->
+            <div id="partial-blocking">
+              <p class="lead main-warning">Only partial blocking detected</p>
+              <p class="lead">We suggest you install a better ad blocker <a href="https://github.com/fivefilters/block-ads/wiki/There-are-no-acceptable-ads">(why?)</a></p>
               <p class="lead">
                 <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success">Get uBlock Origin</a>
               </p>
             </div>
-          </div>
 
           <div class="mastfoot">
             <div class="inner">
@@ -91,19 +104,48 @@
       </div>
 
     </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+ 
     <script src="js/jquery.min.js"></script>
     <script>
-        if ($("#all-good").is(":visible")) {
-         var img = $("img#acceptable-placeholder")
-        .load(function() {
-          $("#get-blocker-acceptable").show();
-        })
-        .attr('src', 'https://gstatic.com/ui/v1/icons/mail/images/cleardot.gif?ads=1'); // ?ads= is usually blocked, but gstatic.com is whitelisted by ABP's 'acceptable' ads program
-        }
+    // function to check if image has loaded, taken from http://stackoverflow.com/a/1977898
+		function isImageOk(img) {
+				// During the onload event, IE correctly identifies any images that
+				// weren’t downloaded as not complete. Others should too. Gecko-based
+				// browsers act like NS4 in that they report this incorrectly.
+				if (!img.complete) {
+						return false;
+				}
+
+				// However, they do have two very useful properties: naturalWidth and
+				// naturalHeight. These give the true size of the image. If it failed
+				// to load, either of these should be zero.
+				if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
+						return false;
+				}
+				
+				// No other way of checking: assume it’s ok.
+				return true;
+		}    
+    
+    $(document).ready(function() {
+			$("#testing").fadeIn('fast');
+    });
+    
+    // runs after images have loaded (or failed to load)
+		$(window).on("load", function() {
+			var adLoaded = isImageOk($("img#test-ad")[0]);
+			var whitelistAdLoaded = isImageOk($("img#test-whitelist")[0]);
+			$("#testing").hide();
+			if (!adLoaded && !whitelistAdLoaded) {
+				$("#all-good").fadeIn();
+			} else if (adLoaded) {
+				$("#no-blocking").fadeIn();
+			} else if (whitelistAdLoaded) {
+				$("#partial-blocking").fadeIn();
+			}
+		});    
+    
+   
     </script>
   </body>
 </html>
