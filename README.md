@@ -2,6 +2,8 @@
 
 [![Bill Hicks on advertising](https://img.youtube.com/vi/aMN8REGJXaA/0.jpg)](https://www.youtube.com/watch?v=aMN8REGJXaA)
 
+**[Are you protected against ads?](https://blockads.fivefilters.org)**
+
 If you use an ad blocker, you've probably come across sites which ask you to switch it off. Doing so exposes you to not only ads and spying, but often malware too&mdash;as many Forbes readers [discovered](https://www.schneier.com/blog/archives/2016/02/the_ads_vs_ad_b.html) when they did just that at the behest of the site.
 
 Many ad-dependent sites are now so desperate for ad money that they'll give you a stern telling off if they find you're using an ad blocker, or prevent you from seeing their content until you turn it off.
