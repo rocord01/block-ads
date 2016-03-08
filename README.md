@@ -18,7 +18,7 @@ Our tests are still quite primitive so will not detect all blockers. But then ag
 
 ### Test site for ad blocking
 
-The code here is running on our site at: &mdash;[blockads.fivefilters.org](https://blockads.fivefilters.org)
+The code here is running on our site at: [blockads.fivefilters.org](https://blockads.fivefilters.org)
 
 Feel free to share that page with anyone you feel could benefit from more ad blocking. It not only tests for ad blocking, but also checks to see if the browser is letting through 'acceptable' ads&mdash;if it is, you get warned about it. Many users of Adblock Plus  are unaware that the company [makes money from whitelisting advertisers](http://www.engadget.com/2016/02/12/rip-adblock-plus/).
 
