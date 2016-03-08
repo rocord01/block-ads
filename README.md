@@ -2,23 +2,25 @@
 
 [![Bill Hicks on advertising](https://img.youtube.com/vi/aMN8REGJXaA/0.jpg)](https://www.youtube.com/watch?v=aMN8REGJXaA)
 
-If you use an ad blocker, you've probably come across sites which ask you to switch it off. Doing so exposes you to not only ads, but often malware too&mdash;as many Forbes readers [discovered](https://www.schneier.com/blog/archives/2016/02/the_ads_vs_ad_b.html) when they switched off their ad blockers to please the site.
+If you use an ad blocker, you've probably come across sites which ask you to switch it off. Doing so exposes you to not only ads and spying, but often malware too&mdash;as many Forbes readers [discovered](https://www.schneier.com/blog/archives/2016/02/the_ads_vs_ad_b.html) when they did just that at the behest of the site.
 
-While there are clearly many benefits to ad blocking, many ad-dependent sites are now so desperate for ad money that they detect use of ad blockers by checking to see if their ads have loaded in the user's browser. If they haven't, the user often gets a stern telling off.
+Many ad-dependent sites are now so desperate for ad money that they'll give you a stern telling off if they find you're using an ad blocker, or prevent you from seeing their content until you turn it off.
 
 In [Why It's Okay to Block Ads](http://blog.practicalethics.ox.ac.uk/2015/10/why-its-ok-to-block-ads/), James Williams writes that in much of the debate around ad-blocking, there's a surprising assumption, from both sides, that "the large-scale capture and exploitation of human attention [is] ethical and/or inevitable in the first place".  He continues
 
 <blockquote>...the question should not be whether ad blocking is ethical, but whether it is a moral obligation. The burden of proof falls squarely on advertising to justify its intrusions into users’ attentional spaces&mdash;not on users to justify exercising their freedom of attention.</blockquote>
 
-The purpose of this little project is to encourage the use of ad blockers. For the time being it's a simple test to see if the user has an ad blocker installed, and a recommendation to install one if they don't. It'd also be nice to let website owners add a small banner/ribbon to their site which lets their visitors know if they're not using an ad blocker (we're running one on FiveFilters.org at the moment).
+The purpose of this project is to test for and encourage the use of ad blockers. 
 
-### Detecting absence of ad blocker
+For the time being it's a simple test to see if you have an ad blocker installed, and a recommendation to install one if you don't. We do not believe in '[acceptable advertising](https://github.com/fivefilters/block-ads/wiki/There-are-no-acceptable-ads)' so we also try to test for that and suggest a better adblocker if we detect it. 
 
-How do we detect if someone is not running an ad blocker? We make a request for a file that most ad blockers will block (at least the ones relying on [EasyList](https://easylist.adblockplus.org/en/)). In this case, we're calling our file `ads.css`. 
+Our tests are still quite primitive so will not detect all blockers. But then again, we are testing for things we feel should be blocked, so if yours isn't blocking them, perhaps you want to change it or update its settings. 
 
 ### Test site for ad blocking
 
-We've also set up a site&mdash;[blockads.fivefilters.org](https://blockads.fivefilters.org)&mdash;anyone can visit to see if their browser is blocking ads or not. It not only tests for ad blocking, but also checks to see if the browser is letting through 'acceptable' ads&mdash;if it is, you get warned about it. Many users of Adblock Plus are unaware that the company [makes money from whitelisting advertisers](http://www.engadget.com/2016/02/12/rip-adblock-plus/).
+The code here is running on our site at: &mdash;[blockads.fivefilters.org](https://blockads.fivefilters.org)
+
+Feel free to share that page with anyone you feel could benefit from more ad blocking. It not only tests for ad blocking, but also checks to see if the browser is letting through 'acceptable' ads&mdash;if it is, you get warned about it. Many users of Adblock Plus  are unaware that the company [makes money from whitelisting advertisers](http://www.engadget.com/2016/02/12/rip-adblock-plus/).
 
 ### Why do we recommend [uBlock Origin](https://github.com/gorhill/uBlock)?
 
