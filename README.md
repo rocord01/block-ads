@@ -6,7 +6,7 @@
 
 Ads are everywhere on the web. They're not only annoying, but they're used to track you and expose you to [malware](https://en.wikipedia.org/wiki/Malvertising). The good news is that it's not that difficult today to block most of the advertising you come across by simply installing a browser extension.
 
-If you already use an ad blocker, you've probably come across sites which ask you to switch it off. Doing so exposes you to not only ads and spying, but malware too&mdash;as many Forbes readers [discovered](https://www.schneier.com/blog/archives/2016/02/the_ads_vs_ad_b.html) when they did just that at the behest of the site.
+If you already use an ad blocker, you've probably come across sites which ask you to switch it off. In doing so, they're exposing you to threats they themselves do not control - &mdash;as many Forbes readers [discovered](https://www.schneier.com/blog/archives/2016/02/the_ads_vs_ad_b.html) when they did just that at the behest of the site and got infected with malware.
 
 Many ad-dependent sites are now so desperate for ad money that they'll give you a stern telling off if they find you're using an ad blocker, or prevent you from seeing their content until you turn it off.
 
