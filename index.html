@@ -1,221 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="Check if you are running an ad blocker. We recommend uBlock Origin">
-		<meta name="author" content="fivefilters.org">
-		<!--<link rel="icon" href="favicon.ico">-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Check if you are running an ad blocker. We recommend uBlock Origin">
+    <meta name="author" content="fivefilters.org">
+    <!--link rel="icon" href="favicon.ico"-->
 
-		<meta property="og:image" content="ff-logo.png" />
+    <meta property="og:image" content="ff-logo.png" />
 
-		<title>Block Ads!</title>
+    <title>Block Ads!</title>
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="css/cover.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/cover.css">
 
-		<style>
-		#no-blocking, #partial-blocking, #all-good { 
-			display: none;
-		}
-		#partial-blocking p.main-warning {
-			font-size: 40px;
-			color: orange;
-		}
-		#no-blocking p.main-warning {
-			font-size: 40px;
-			color: red;
-		}
-		#all-good, #no-js {
-			color: lightgreen;
-		}
-		#all-good p { font-size: 40px; }
-		#no-js p { font-size: 35px; }
-		
-		.github, .chrome, .firefox {
-			display: none;
-		}
-		</style>
+    <style>
+    #no-blocking, #partial-blocking, #all-good { 
+      display: none;
+    }
+    #partial-blocking p.main-warning {
+      font-size: 40px;
+      color: orange;
+    }
+    #no-blocking p.main-warning {
+      font-size: 40px;
+      color: red;
+    }
+    #all-good, #no-js {
+      color: lightgreen;
+    }
+    #all-good p { font-size: 40px; }
+    #no-js p { font-size: 35px; }
+    
+    .github, .chrome, .firefox {
+      display: none;
+    }
+    </style>
 
-		<!-- old method <link rel="stylesheet" href="css/ads.css"> -->
+  </head>
 
-	</head>
+  <body>
 
-	<body>
+    <div class="site-wrapper">
 
-		<div class="site-wrapper">
+      <div class="site-wrapper-inner">
 
-			<div class="site-wrapper-inner">
+        <div class="cover-container">
 
-				<div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><a href="index.html">Block Ads!</a></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="index.html">Test for ad blocker</a></li>
+                  <!-- <li><a href="#">Promote ad blocking</a></li> -->
+                  <li><a href="https://github.com/fivefilters/block-ads#readme">Why?</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
 
-					<div class="masthead clearfix">
-						<div class="inner">
-							<h3 class="masthead-brand"><a href="index.html">Block Ads!</a></h3>
-							<nav>
-								<ul class="nav masthead-nav">
-									<li class="active"><a href="index.html">Test for ad blocker</a></li>
-									<!-- <li><a href="#">Promote ad blocking</a></li> -->
-									<li><a href="https://github.com/fivefilters/block-ads#readme">Why?</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
+          <div class="inner cover">
+            <!-- Loading image -->
+            <p class="lead" id="testing" style="display: none;"><img src="images/testing.gif" /></p>
+            <!-- Ad blocking tests (requests for these images should be blocked by your ad blocker) -->
+            <img id="test-ad" src="http://fusionads.net/images/logo.png" style="visibility: hidden; width:1px; height:1px;" />
+            <img id="test-whitelist" src="https://gstatic.com/webp/gallery3/1.png?ads=1" style="visibility: hidden; width:1px; height:1px;" />
+            
+            <!-- No JS -->
+            <noscript>
+            <div id="no-js">
+              <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> You're advanced! (No JS)</p>
+            </div>
+          </noscript>
 
-					<div class="inner cover">
-						<!-- Loading image -->
-						<p class="lead" id="testing" style="display: none;"><img src="images/testing.gif" /></p>
-						<!-- Ad blocking tests (requests for these images should be blocked by your ad blocker) -->
-						<img id="test-ad" src="http://fusionads.net/images/favicon.ico" style="visibility: hidden;" />
-						<img id="test-whitelist" src="https://gstatic.com/ui/v1/icons/mail/images/cleardot.gif?ads=1" style="visibility: hidden;" />
-						
-						<!-- No JS -->
-						<noscript>
-						<div id="no-js">
-							<p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> You're advanced! (No JS)</p>
-						</div>
-					</noscript>
+            <!-- Evertying okay? -->
+            <div id="all-good">
+              <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
+            </div>
+            
+          
+            <!-- No ad blocking -->
+            <div id="no-blocking">
+              <p class="lead main-warning">No ad blocking detected</p>
+              <p class="lead">We suggest you install an ad blocker</p>
+              <p class="lead">
+                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
+                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
+              </p>
+            </div>
+            
+            <!-- Partial blocking -->
+            <div id="partial-blocking">
+              <p class="lead main-warning">Only partial blocking detected</p>
+              <p class="lead">We suggest you install a better ad blocker <a href="https://github.com/fivefilters/block-ads/wiki/There-are-no-acceptable-ads">(why?)</a></p>
+              <p class="lead">
+                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
+                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
+              </p>
+            </div>
 
-						<!-- Evertying okay? -->
-						<div id="all-good">
-							<p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
-						</div>
-						
-					
-						<!-- No ad blocking -->
-						<div id="no-blocking">
-							<p class="lead main-warning">No ad blocking detected</p>
-							<p class="lead">We suggest you install an ad blocker</p>
-							<p class="lead">
-								<a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-								<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-								<a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
-							</p>
-						</div>
-						
-						<!-- Partial blocking -->
-						<div id="partial-blocking">
-							<p class="lead main-warning">Only partial blocking detected</p>
-							<p class="lead">We suggest you install a better ad blocker <a href="https://github.com/fivefilters/block-ads/wiki/There-are-no-acceptable-ads">(why?)</a></p>
-							<p class="lead">
-								<a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-								<a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-								<a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
-							</p>
-						</div>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Made by <a href="http://fivefilters.org">FiveFilters.org</a> &bullet; <a href="https://github.com/fivefilters/block-ads">Fork, copy, improve</a></p>
+            </div>
+          </div>
 
-					<div class="mastfoot">
-						<div class="inner">
-							<p>Made by <a href="http://fivefilters.org">FiveFilters.org</a> &bullet; <a href="https://github.com/fivefilters/block-ads">Fork, copy, improve</a></p>
-						</div>
-					</div>
+        </div>
 
-				</div>
+      </div>
 
-			</div>
-
-		</div>
+    </div>
  
-		<script src="js/jquery.min.js"></script>
-		<script>
-		// function to check if image has loaded, taken from http://stackoverflow.com/a/1977898
-		function isImageOk(img) {
-				// During the onload event, IE correctly identifies any images that
-				// weren’t downloaded as not complete. Others should too. Gecko-based
-				// browsers act like NS4 in that they report this incorrectly.
-				if (!img.complete) {
-						return false;
-				}
+    <script src="js/jquery.min.js"></script>
+    <script>
+    // function to check if image has loaded, taken from http://stackoverflow.com/a/1977898
+    function isImageOk(img) {
+        // During the onload event, IE correctly identifies any images that
+        // weren’t downloaded as not complete. Others should too. Gecko-based
+        // browsers act like NS4 in that they report this incorrectly.
+        if (!img.complete) {
+            return false;
+        }
 
-				// However, they do have two very useful properties: naturalWidth and
-				// naturalHeight. These give the true size of the image. If it failed
-				// to load, either of these should be zero.
-				if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
-						return false;
-				}
-				
-				// No other way of checking: assume it’s ok.
-				return true;
-		}
-		
-		$(document).ready(function() {
-			$("#testing").fadeIn('fast');
-			
-			// browser detect code from http://stackoverflow.com/a/13480430
-			var BrowserDetect = {
-					init: function () {
-							this.browser = this.searchString(this.dataBrowser) || "Other";
-							this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
-					},
-					searchString: function (data) {
-							for (var i = 0; i < data.length; i++) {
-									var dataString = data[i].string;
-									this.versionSearchString = data[i].subString;
+        // However, they do have two very useful properties: naturalWidth and
+        // naturalHeight. These give the true size of the image. If it failed
+        // to load, either of these should be zero.
+        if (typeof img.naturalWidth !== "undefined" && img.naturalWidth <= 1) {
+            return false;
+        }
+        
+        // No other way of checking: assume it’s ok.
+        return true;
+    }
+    
+    $(document).ready(function() {
+      $("#testing").fadeIn('fast');
+      
+      // browser detect code from http://stackoverflow.com/a/13480430
+      var BrowserDetect = {
+          init: function () {
+              this.browser = this.searchString(this.dataBrowser) || "Other";
+              this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+          },
+          searchString: function (data) {
+              for (var i = 0; i < data.length; i++) {
+                  var dataString = data[i].string;
+                  this.versionSearchString = data[i].subString;
 
-									if (dataString.indexOf(data[i].subString) !== -1) {
-											return data[i].identity;
-									}
-							}
-					},
-					searchVersion: function (dataString) {
-							var index = dataString.indexOf(this.versionSearchString);
-							if (index === -1) {
-									return;
-							}
+                  if (dataString.indexOf(data[i].subString) !== -1) {
+                      return data[i].identity;
+                  }
+              }
+          },
+          searchVersion: function (dataString) {
+              var index = dataString.indexOf(this.versionSearchString);
+              if (index === -1) {
+                  return;
+              }
 
-							var rv = dataString.indexOf("rv:");
-							if (this.versionSearchString === "Trident" && rv !== -1) {
-									return parseFloat(dataString.substring(rv + 3));
-							} else {
-									return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
-							}
-					},
+              var rv = dataString.indexOf("rv:");
+              if (this.versionSearchString === "Trident" && rv !== -1) {
+                  return parseFloat(dataString.substring(rv + 3));
+              } else {
+                  return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+              }
+          },
 
-					dataBrowser: [
-							{string: navigator.userAgent, subString: "Edge", identity: "MS Edge"},
-							{string: navigator.userAgent, subString: "MSIE", identity: "Explorer"},
-							{string: navigator.userAgent, subString: "Trident", identity: "Explorer"},
-							{string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},
-							{string: navigator.userAgent, subString: "Opera", identity: "Opera"},  
-							{string: navigator.userAgent, subString: "OPR", identity: "Opera"},  
+          dataBrowser: [
+              {string: navigator.userAgent, subString: "Edge", identity: "MS Edge"},
+              {string: navigator.userAgent, subString: "MSIE", identity: "Explorer"},
+              {string: navigator.userAgent, subString: "Trident", identity: "Explorer"},
+              {string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},
+              {string: navigator.userAgent, subString: "Opera", identity: "Opera"},  
+              {string: navigator.userAgent, subString: "OPR", identity: "Opera"},  
 
-							{string: navigator.userAgent, subString: "Chrome", identity: "Chrome"}, 
-							{string: navigator.userAgent, subString: "Safari", identity: "Safari"}       
-					]
-			};
-			
-			BrowserDetect.init();
-			if (BrowserDetect.browser === "Firefox") {
-				 $(".firefox").show();
-			} else if (BrowserDetect.browser === "Chrome") {
-				 $(".chrome").show();
-			} else {
-				 $(".github").show();
-			}
-			
-		});
-		
-		// runs after images have loaded (or failed to load)
-		$(window).on("load", function() {
-			var adLoaded = isImageOk($("img#test-ad")[0]);
-			var whitelistAdLoaded = isImageOk($("img#test-whitelist")[0]);
-			$("#testing").hide();
-			if (!adLoaded && !whitelistAdLoaded) {
-				$("#all-good").fadeIn();
-			} else if (adLoaded) {
-				$("#no-blocking").fadeIn();
-			} else if (whitelistAdLoaded) {
-				$("#partial-blocking").fadeIn();
-			}
-		});    
-		
-		//document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
-	 
-		</script>
-	</body>
+              {string: navigator.userAgent, subString: "Chrome", identity: "Chrome"}, 
+              {string: navigator.userAgent, subString: "Safari", identity: "Safari"}       
+          ]
+      };
+      
+      BrowserDetect.init();
+      if (BrowserDetect.browser === "Firefox") {
+         $(".firefox").show();
+      } else if (BrowserDetect.browser === "Chrome") {
+         $(".chrome").show();
+      } else {
+         $(".github").show();
+      }
+      
+    });
+    
+    // runs after images have loaded (or failed to load)
+    $(window).on("load", function() {
+      var adLoaded = isImageOk($("img#test-ad")[0]);
+      var whitelistAdLoaded = isImageOk($("img#test-whitelist")[0]);
+      $("#testing").hide();
+      if (!adLoaded && !whitelistAdLoaded) {
+        $("#all-good").fadeIn();
+      } else if (adLoaded) {
+        $("#no-blocking").fadeIn();
+      } else if (whitelistAdLoaded) {
+        $("#partial-blocking").fadeIn();
+      }
+    });    
+    
+    //document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
+   
+    </script>
+  </body>
 </html>
