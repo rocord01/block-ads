@@ -29,7 +29,7 @@
     }
     #no-blocking p.main-warning {
       font-size: 40px;
-      color: red;
+      color: #E35555;
     }
     #all-good, #no-js {
       color: lightgreen;
@@ -123,6 +123,11 @@
     <script>
     // function to check if image has loaded, taken from http://stackoverflow.com/a/1977898
     function isImageOk(img) {
+        // Image was removed from the page code (issue #1)
+        if (typeof img === 'undefined') {
+            return false;
+        }
+
         // During the onload event, IE correctly identifies any images that
         // weren’t downloaded as not complete. Others should too. Gecko-based
         // browsers act like NS4 in that they report this incorrectly.
