@@ -1,6 +1,6 @@
 # Let's encourage ad blocking
 
-[![Bill Hicks on advertising](https://img.youtube.com/vi/aMN8REGJXaA/0.jpg)](https://www.youtube.com/watch?v=aMN8REGJXaA)
+[![Bill Hicks on advertising](https://img.youtube.com/vi/jemqAtxKyAo/0.jpg)](https://www.youtube.com/watch?v=jemqAtxKyAo)
 
 **[Are you protected against ads?](https://blockads.fivefilters.org)**
 
