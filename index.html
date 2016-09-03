@@ -37,7 +37,7 @@
     #all-good p { font-size: 40px; }
     #no-js p { font-size: 35px; }
     
-    .github, .chrome, .firefox {
+    .github, .chrome, .firefox, .safari {
       display: none;
     }
     </style>
@@ -93,6 +93,7 @@
                 <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
                 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
+                <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" /> Get Wipr</a>                
               </p>
             </div>
             
@@ -104,12 +105,13 @@
                 <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
                 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
+                <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" /> Get Wipr</a>                    
               </p>
             </div>
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Made by <a href="http://fivefilters.org">FiveFilters.org</a> &bullet; <a href="https://github.com/fivefilters/block-ads">Fork, copy, improve</a></p>
+              <p>Made by <a href="http://fivefilters.org">FiveFilters.org</a> &bullet; <a href="https://github.com/fivefilters/block-ads">Source</a></p>
             </div>
           </div>
 
@@ -141,14 +143,14 @@
         if (typeof img.naturalWidth !== "undefined" && img.naturalWidth <= 1) {
             return false;
         }
-        
+
         // No other way of checking: assume it’s ok.
         return true;
     }
-    
+
     $(document).ready(function() {
       $("#testing").fadeIn('fast');
-      
+
       // browser detect code from http://stackoverflow.com/a/13480430
       var BrowserDetect = {
           init: function () {
@@ -184,25 +186,27 @@
               {string: navigator.userAgent, subString: "MSIE", identity: "Explorer"},
               {string: navigator.userAgent, subString: "Trident", identity: "Explorer"},
               {string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},
-              {string: navigator.userAgent, subString: "Opera", identity: "Opera"},  
-              {string: navigator.userAgent, subString: "OPR", identity: "Opera"},  
+              {string: navigator.userAgent, subString: "Opera", identity: "Opera"},
+              {string: navigator.userAgent, subString: "OPR", identity: "Opera"},
 
-              {string: navigator.userAgent, subString: "Chrome", identity: "Chrome"}, 
-              {string: navigator.userAgent, subString: "Safari", identity: "Safari"}       
+              {string: navigator.userAgent, subString: "Chrome", identity: "Chrome"},
+              {string: navigator.userAgent, subString: "Safari", identity: "Safari"}
           ]
       };
-      
+
       BrowserDetect.init();
       if (BrowserDetect.browser === "Firefox") {
          $(".firefox").show();
       } else if (BrowserDetect.browser === "Chrome") {
          $(".chrome").show();
+      } else if (BrowserDetect.browser === "Safari") {
+         $(".safari").show();         
       } else {
          $(".github").show();
       }
-      
+
     });
-    
+
     // runs after images have loaded (or failed to load)
     $(window).on("load", function() {
       var adLoaded = isImageOk($("img#test-ad")[0]);
@@ -215,10 +219,10 @@
       } else if (whitelistAdLoaded) {
         $("#partial-blocking").fadeIn();
       }
-    });    
+    });
     
     //document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
-   
+
     </script>
   </body>
 </html>
