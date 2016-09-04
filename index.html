@@ -7,6 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Check if you are running an ad blocker. We recommend uBlock Origin">
     <meta name="author" content="fivefilters.org">
+    <meta http-equiv="Cache-Control" content="no-store" />
     <!--link rel="icon" href="favicon.ico"-->
 
     <meta property="og:image" content="ff-logo.png" />
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="css/cover.css">
 
     <style>
-    #no-blocking, #partial-blocking, #all-good { 
+    #no-blocking, #partial-blocking, #all-good {
       display: none;
     }
     #partial-blocking p.main-warning {
@@ -36,7 +37,7 @@
     }
     #all-good p { font-size: 40px; }
     #no-js p { font-size: 35px; }
-    
+
     .github, .chrome, .firefox, .safari {
       display: none;
     }
@@ -67,52 +68,54 @@
 
           <div class="inner cover">
             <!-- Loading image -->
-            <p class="lead" id="testing" style="display: none;"><img src="images/testing.gif" /></p>
+            <p class="lead" id="testing" style="display: none;"><img src="images/testing.gif" alt="testing" /></p>
             <!-- Ad blocking tests (requests for these images should be blocked by your ad blocker) -->
-            <img id="test-ad" src="http://fusionads.net/images/designlab-devices.png" style="visibility: hidden; width:1px; height:1px;" />
-            <img id="test-whitelist" src="https://gstatic.com/webp/gallery3/1.png?ads=1" style="visibility: hidden; width:1px; height:1px;" />
-            
+            <img id="test-ad" src="http://fusionads.net/images/designlab-devices.png" style="visibility: hidden; width:1px; height:1px;" alt="test-ad" />
+            <img id="test-whitelist" src="https://gstatic.com/webp/gallery3/1.png?ads=1" style="visibility: hidden; width:1px; height:1px;" alt="test-whitelist" />
+
             <!-- No JS -->
             <noscript>
-            <div id="no-js">
-              <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> You're advanced! (No JS)</p>
-            </div>
-          </noscript>
+              <div id="no-js">
+                <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> You're advanced! (No JS)</p>
+              </div>
+            </noscript>
 
             <!-- Evertying okay? -->
             <div id="all-good">
               <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
             </div>
-            
-          
+
+
             <!-- No ad blocking -->
             <div id="no-blocking">
               <p class="lead main-warning">No ad blocking detected</p>
               <p class="lead">We suggest you install an ad blocker</p>
               <p class="lead">
-                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
-                <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" /> Get Wipr</a>                
+                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
+                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
+                <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Wipr</a>
               </p>
             </div>
-            
+
             <!-- Partial blocking -->
             <div id="partial-blocking">
               <p class="lead main-warning">Only partial blocking detected</p>
               <p class="lead">We suggest you install a better ad blocker <a href="https://github.com/fivefilters/block-ads/wiki/There-are-no-acceptable-ads">(why?)</a></p>
               <p class="lead">
-                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" /> Get uBlock Origin</a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" /> Get uBlock Origin</a>
-                <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" /> Get Wipr</a>                    
+                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
+                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
+                <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Wipr</a>
               </p>
             </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Made by <a href="http://fivefilters.org">FiveFilters.org</a> &bullet; <a href="https://github.com/fivefilters/block-ads">Source</a></p>
+            <div class="mastfoot">
+              <div class="inner">
+                <p>Made by <a href="http://fivefilters.org">FiveFilters.org</a> &bull; <a href="https://github.com/fivefilters/block-ads">Source</a></p>
+              </div>
             </div>
+
           </div>
 
         </div>
@@ -120,7 +123,7 @@
       </div>
 
     </div>
- 
+
     <script src="js/jquery.min.js"></script>
     <script>
     // function to check if image has loaded, taken from http://stackoverflow.com/a/1977898
@@ -196,13 +199,13 @@
 
       BrowserDetect.init();
       if (BrowserDetect.browser === "Firefox") {
-         $(".firefox").show();
+        $(".firefox").show();
       } else if (BrowserDetect.browser === "Chrome") {
-         $(".chrome").show();
+        $(".chrome").show();
       } else if (BrowserDetect.browser === "Safari") {
-         $(".safari").show();         
+        $(".safari").show();
       } else {
-         $(".github").show();
+        $(".github").show();
       }
 
     });
@@ -220,8 +223,8 @@
         $("#partial-blocking").fadeIn();
       }
     });
-    
-    //document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
+
+    //document.write("You are using <strong>" + BrowserDetect.browser + "</strong> with version <strong>" + BrowserDetect.version + "</strong>");
 
     </script>
   </body>
