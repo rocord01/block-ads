@@ -41,7 +41,7 @@
     #all-good p { font-size: 40px; }
     #no-js p { font-size: 35px; }
 
-    .github, .chrome, .firefox, .safari, .ios {
+    .github, .chrome, .firefox, .safari, .opera, .ios {
       display: none;
     }
     /* Browser logos from https://github.com/alrra/browser-logos */
@@ -99,6 +99,7 @@
                 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
                 <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Wipr</a>
+                <a href="https://addons.opera.com/extensions/details/ublock/" class="btn btn-lg btn-success opera"><img src="images/opera_32x32.png" alt="opera" /> Get uBlock Origin</a>
                 <a href="https://itunes.apple.com/app/id1055677337" class="btn btn-lg btn-success ios"><img src="images/safari-ios_32x32.png" alt="ios" /> Get Focus</a>                
               </p>
             </div>
@@ -112,6 +113,7 @@
                 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
                 <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Wipr</a>
+                <a href="https://addons.opera.com/extensions/details/ublock/" class="btn btn-lg btn-success opera"><img src="images/opera_32x32.png" alt="opera" /> Get uBlock Origin</a>
                 <a href="https://itunes.apple.com/app/id1055677337" class="btn btn-lg btn-success ios"><img src="images/safari-ios_32x32.png" alt="ios" /> Get Focus</a>                
               </p>
             </div>
@@ -219,6 +221,8 @@
         $(".chrome").show();
       } else if (BrowserDetect.browser === "Safari") {
         $(".safari").show();
+      } else if (BrowserDetect.browser === "Opera") {
+        $(".opera").show();
       } else if (BrowserDetect.browser === "iOS" && !window.MSStream) {
         $(".ios").show();
       } else {
