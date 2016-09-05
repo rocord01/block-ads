@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Check if you are running an ad blocker. We recommend uBlock Origin">
+    <meta name="description" content="We check for and encourage the use of an ad blocker.">
     <meta name="author" content="fivefilters.org">
-    <meta http-equiv="Cache-Control" content="no-store" />
     <!--link rel="icon" href="favicon.ico"-->
 
     <meta property="og:image" content="ff-logo.png" />
@@ -38,7 +37,7 @@
     #all-good p { font-size: 40px; }
     #no-js p { font-size: 35px; }
 
-    .github, .chrome, .firefox, .safari {
+    .github, .chrome, .firefox, .safari, .ios {
       display: none;
     }
     </style>
@@ -70,8 +69,8 @@
             <!-- Loading image -->
             <p class="lead" id="testing" style="display: none;"><img src="images/testing.gif" alt="testing" /></p>
             <!-- Ad blocking tests (requests for these images should be blocked by your ad blocker) -->
-            <img id="test-ad" src="http://fusionads.net/images/designlab-devices.png" style="visibility: hidden; width:1px; height:1px;" alt="test-ad" />
-            <img id="test-whitelist" src="https://gstatic.com/webp/gallery3/1.png?ads=1" style="visibility: hidden; width:1px; height:1px;" alt="test-whitelist" />
+            <img id="test-ad" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="visibility: hidden; width:1px; height:1px;" alt="test-ad" />
+            <img id="test-whitelist" src="image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="visibility: hidden; width:1px; height:1px;" alt="test-whitelist" />
 
             <!-- No JS -->
             <noscript>
@@ -95,6 +94,7 @@
                 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
                 <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Wipr</a>
+                <a href="https://itunes.apple.com/app/id1055677337" class="btn btn-lg btn-success ios"><img src="images/safari_32x32.png" alt="ios" /> Get Focus</a>                
               </p>
             </div>
 
@@ -107,6 +107,7 @@
                 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
                 <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Wipr</a>
+                <a href="https://itunes.apple.com/app/id1055677337" class="btn btn-lg btn-success ios"><img src="images/safari_32x32.png" alt="ios" /> Get Focus</a>                
               </p>
             </div>
 
@@ -152,7 +153,9 @@
     }
 
     $(document).ready(function() {
-      $("#testing").fadeIn('fast');
+      $("#testing").fadeIn('fast');      
+      $("img#test-ad").attr('src', 'http://carbonads.com/images/designlab-devices.png?' + escape(new Date()));
+      $("img#test-whitelist").attr('src', 'https://gstatic.com/webp/gallery3/1.png?ads=1&' + escape(new Date()));
 
       // browser detect code from http://stackoverflow.com/a/13480430
       var BrowserDetect = {
@@ -188,11 +191,18 @@
               {string: navigator.userAgent, subString: "Edge", identity: "MS Edge"},
               {string: navigator.userAgent, subString: "MSIE", identity: "Explorer"},
               {string: navigator.userAgent, subString: "Trident", identity: "Explorer"},
+
               {string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},
+              
               {string: navigator.userAgent, subString: "Opera", identity: "Opera"},
               {string: navigator.userAgent, subString: "OPR", identity: "Opera"},
 
               {string: navigator.userAgent, subString: "Chrome", identity: "Chrome"},
+
+              {string: navigator.userAgent, subString: "iPad", identity: "iOS"},
+              {string: navigator.userAgent, subString: "iPhone", identity: "iOS"},
+              {string: navigator.userAgent, subString: "iPod", identity: "iOS"},
+
               {string: navigator.userAgent, subString: "Safari", identity: "Safari"}
           ]
       };
@@ -204,6 +214,8 @@
         $(".chrome").show();
       } else if (BrowserDetect.browser === "Safari") {
         $(".safari").show();
+      } else if (BrowserDetect.browser === "iOS" && !window.MSStream) {
+        $(".ios").show();
       } else {
         $(".github").show();
       }
