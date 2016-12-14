@@ -38,8 +38,13 @@
     #all-good, #no-js {
       color: lightgreen;
     }
-    #all-good p { font-size: 40px; }
-    #no-js p { font-size: 35px; }
+    #all-good p { font-size: 30px; }
+    #no-js p { font-size: 25px; }
+
+    @media (min-width: 768px) {
+      #all-good p { font-size: 40px; }
+      #no-js p { font-size: 35px; }
+    }    
 
     .github, .chrome, .firefox, .safari, .opera, .ios, .edge {
       display: none;
@@ -62,9 +67,10 @@
               <h3 class="masthead-brand"><a href="index.html">Block Ads!</a></h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="index.html">Test for ad blocker</a></li>
+                  <li class="active"><a href="index.html">Browser Test</a></li>
                   <!-- <li><a href="#">Promote ad blocking</a></li> -->
-                  <li><a href="https://github.com/fivefilters/block-ads#readme">Why?</a></li>
+                  <li><a href="why.html">Why?</a></li>
+                  <li><a href="acceptable.html">'Acceptable' Ads?</a></li>
                 </ul>
               </nav>
             </div>
@@ -116,7 +122,7 @@
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
                 <a href="https://safari-extensions.apple.com/details/?id=com.giorgiocalderolla.wipr-desktop-4449XA862Y" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Wipr</a>
                 <a href="https://addons.opera.com/extensions/details/ublock/" class="btn btn-lg btn-success opera"><img src="images/opera_32x32.png" alt="opera" /> Get uBlock Origin</a>
-                <a href="https://itunes.apple.com/app/id1055677337" class="btn btn-lg btn-success ios"><img src="images/safari-ios_32x32.png" alt="ios" /> Get Focus</a>                
+                <a href="https://itunes.apple.com/app/id1055677337" class="btn btn-lg btn-success ios"><img src="images/safari-ios_32x32.png" alt="ios" /> Get Focus</a>
               </p>
             </div>
 
@@ -160,6 +166,8 @@
         // No other way of checking: assume it’s ok.
         return true;
     }
+
+    var isMobile = /Mobile|mini|Fennec|Android|iP(ad|od|hone)/.test(navigator.appVersion);
 
     $(document).ready(function() {
       $("#testing").fadeIn('fast');      
@@ -232,7 +240,6 @@
       } else {
         $(".github").show();
       }
-
     });
 
     // runs after images have loaded (or failed to load)
@@ -240,7 +247,7 @@
       var adLoaded = isImageOk($("img#test-ad")[0]);
       var whitelistAdLoaded = isImageOk($("img#test-whitelist")[0]);
       $("#testing").hide();
-      if (!adLoaded && !whitelistAdLoaded) {
+      if (!adLoaded && (!whitelistAdLoaded || isMobile)) {
         $("#all-good").fadeIn();
       } else if (adLoaded) {
         $("#no-blocking").fadeIn();
