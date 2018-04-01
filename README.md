@@ -10,9 +10,7 @@ It's a simple test to see if you have an ad blocker installed, and a recommendat
 
 The intention is to have a page you can send to family and friends. When they access it, they will get a recommendation for an ad blocker that will run on their browser or device.
 
-We recommend the appropriate [uBlock Origin](https://github.com/gorhill/uBlock) browser extension if we detect Chrome, Firefox, Opera or Microsoft Edge.
-
-We recommend [Wipr](http://www.giorgiocalderolla.com/wipr.html) for the Safari browser (waiting until uBlock Origin is ready).
+We recommend the appropriate [uBlock Origin](https://github.com/gorhill/uBlock) browser extension if we detect Firefox, Chrome, Safari, Opera or Microsoft Edge.
 
 We recommend [Focus](https://itunes.apple.com/us/app/firefox-focus-privacy-browser/id1055677337) for iOS (although now that it's also a browser rather than the lighter content blocker it was before, better recommendations are welcome).
 
