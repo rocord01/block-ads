@@ -10,7 +10,7 @@ It's a simple test to see if you have an ad blocker installed, and a recommendat
 
 The intention is to have a page you can send to family and friends. When they access it, they will get a recommendation for an ad blocker that will run on their browser or device.
 
-We recommend **[uBlock Origin](https://github.com/gorhill/uBlock)** browser extension if we detect Firefox, Chrome, Opera or Microsoft Edge.
+We recommend **[uBlock Origin](https://github.com/gorhill/uBlock)** for Firefox, Chrome, Opera or Microsoft Edge.
 
 We recommend **[Better Blocker](https://better.fyi)** for iOS and Safari.
 
