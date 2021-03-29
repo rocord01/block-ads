@@ -11,7 +11,7 @@
 
     <meta property="og:image" content="ff-logo.png" />
 
-    <title>Block Ads!</title>
+    <title>Block Ads! Adblock test</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -265,7 +265,9 @@
         } else if (adLoaded) {
             $("#no-blocking").fadeIn();
         } else if (whitelistAdLoaded) {
-            $("#partial-blocking").fadeIn();
+            //TODO: The check for whitelist needs to be updated (need something that Adblock Plus, and those with 'acceptable ads' programs, will load but not uBlock Origin).
+            //$("#partial-blocking").fadeIn();
+            $("#all-good").fadeIn();
         }          
       });
 
