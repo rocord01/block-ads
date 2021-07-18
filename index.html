@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="We check for and encourage the use of an ad blocker.">
-    <meta name="author" content="fivefilters.org">
     <!--link rel="icon" href="favicon.ico"-->
 
     <meta property="og:image" content="ff-logo.png" />
@@ -66,12 +63,6 @@
             <div class="inner">
               <h3 class="masthead-brand"><a href="index.html">Block Ads!</a></h3>
               <nav>
-                <ul class="nav masthead-nav">
-                  <!--<li><a href="shorten.html">URL Shortener</a></li>-->
-                  <!-- <li><a href="#">Promote ad blocking</a></li> -->
-                  <li><a href="why.html">Why?</a></li>
-                  <li><a href="acceptable.html">'Acceptable' Ads?</a></li>
-                </ul>
               </nav>
             </div>
           </div>
@@ -88,51 +79,36 @@
             <!-- No JS -->
             <noscript>
               <div id="no-js">
-                <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> You're advanced! (No JS)</p>
+                <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Your Pi-Hole Works! (JS is disabled)</p>
               </div>
             </noscript>
 
             <!-- Evertying okay? -->
             <div id="all-good">
-              <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ad blocking enabled!</p>
+              <p class="lead"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Your Pi-Hole Works!</p>
             </div>
 
 
             <!-- No ad blocking -->
             <div id="no-blocking">
-              <p class="lead main-warning">No ad blocking detected</p>
-              <p class="lead">We suggest you install an ad blocker</p>
+              <p class="lead main-warning"> No Pi-Hole Detected</p>
+              <p class="lead">Get Support For Your Pi-Hole</p>
               <p class="lead">
-                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
-                <a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak" class="btn btn-lg btn-success edge"><img src="images/edge_32x32.png" alt="edge" /> Get uBlock Origin</a>
-                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
-                <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
-                <a href="https://better.fyi/" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Better Blocker</a>
-                <a href="https://addons.opera.com/extensions/details/ublock/" class="btn btn-lg btn-success opera"><img src="images/opera_32x32.png" alt="opera" /> Get uBlock Origin</a>
-                <a href="https://better.fyi/" class="btn btn-lg btn-success ios"><img src="images/safari-ios_32x32.png" alt="ios" /> Get Better Blocker</a>
-                <a href="https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245" class="btn btn-lg btn-default pihole"><img src="images/pihole_32x32.png" alt="ios" /> Set up Pi-hole</a>
+                <a href="https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245" class="btn btn-lg btn-default pihole"><img src="images/pihole_32x32.png" alt="ios" /> Get Help Setting Up A Pi-Hole</a>
               </p>
             </div>
 
             <!-- Partial blocking -->
             <div id="partial-blocking">
               <p class="lead main-warning">Only partial blocking detected</p>
-              <p class="lead">We suggest you install a better ad blocker <a href="acceptable.html">(why?)</a></p>
+              <p class="lead">I Suggest You Add More Host Files to Pi-Hole </p>
               <p class="lead">
-                <a href="https://github.com/gorhill/uBlock#installation" class="btn btn-lg btn-success github"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
-                <a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak" class="btn btn-lg btn-success edge"><img src="images/edge_32x32.png" alt="edge" /> Get uBlock Origin</a>
-                <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" class="btn btn-lg btn-success chrome"><img src="images/chrome_32x32.png" alt="chrome" /> Get uBlock Origin</a>
-                <a href="https://addons.mozilla.org/firefox/addon/ublock-origin/" class="btn btn-lg btn-success firefox"><img src="images/firefox_32x32.png" alt="firefox" /> Get uBlock Origin</a>
-                <a href="https://better.fyi/" class="btn btn-lg btn-success safari"><img src="images/safari_32x32.png" alt="safari" /> Get Better Blocker</a>
-                <a href="https://addons.opera.com/extensions/details/ublock/" class="btn btn-lg btn-success opera"><img src="images/opera_32x32.png" alt="opera" /> Get uBlock Origin</a>
-                <a href="https://better.fyi/" class="btn btn-lg btn-success ios"><img src="images/safari-ios_32x32.png" alt="ios" /> Get Better Blocker</a>
-                <a href="https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245" class="btn btn-lg btn-default pihole"><img src="images/pihole_32x32.png" alt="ios" /> Set up Pi-hole</a>
+                <a href="https://filterlists.com" class="btn btn-lg btn-default pihole"><img src="images/pihole_32x32.png" alt="ios" /> Find Block Host Files</a>
               </p>
             </div>
 
             <div class="mastfoot">
               <div class="inner" style="font-size: 1.3em;">
-                <p>Made by <a href="https://www.fivefilters.org">FiveFilters.org</a> &bull; <a href="https://github.com/fivefilters/block-ads">Source</a></p>
               </div>
             </div>
 
